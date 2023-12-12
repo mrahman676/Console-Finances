@@ -162,3 +162,7 @@ for (let i=1; i < finances.length; i++) {
 }
 
 console.log("Total: $" + totalprof);
+
+averageChange = totaldif / (finances.length - 1);
+
+console.log ("Average Change: " + averageChange);
