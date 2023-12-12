@@ -158,6 +158,7 @@ var totaldif = 0;
 
 for (let i=1; i < finances.length; i++) {
   totalprof = totalprof + finances[i][1];
+  changes = finances[i][1] - totalprof;
 }
 
 console.log("Total: $" + totalprof);
