@@ -152,7 +152,7 @@ console.log("Total Months: " + finances.length);
 
 var totalprof = finances[0][1];
 
-for (let i=1; i < finances.length; i++) {
+for (i=1; i < finances.length; i++) {
   totalprof = totalprof + finances[i][1];
 }
 
@@ -162,7 +162,7 @@ console.log("Total: $" + totalprof);
 var difference = 0;
 var totaldif = 0;
 
-for (let i=1; i < finances.length; i++) {
+for (i=1; i < finances.length; i++) {
 var currentprof = finances[i][1];
 var previousprof = finances[i-1][1];
 difference = currentprof - previousprof;
@@ -171,7 +171,9 @@ totaldif = totaldif + difference;
 
 var average = (totaldif / (finances.length-1));
 
-console.log("Average Change: " + average);
+console.log("Average Change: $" + average.toFixed(2));
+
+// greatest increase in profits/losses requires the month and value of increase
 
 
 
