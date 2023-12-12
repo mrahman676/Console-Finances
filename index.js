@@ -152,13 +152,13 @@ console.log("Total Months: " + finances.length);
 
 var totalprof = finances[0][1];
 var changes = 0;
-var difference = 0;
 var totaldif = 0;
 
 
 for (let i=1; i < finances.length; i++) {
   totalprof = totalprof + finances[i][1];
   changes = finances[i][1] - totalprof;
+  totaldif = totaldif + changes;
 }
 
 console.log("Total: $" + totalprof);
