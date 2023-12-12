@@ -161,12 +161,15 @@ console.log("Total: $" + totalprof);
 
 var difference = 0;
 var totaldif = 0;
+var diffArray = [];
 
 for (i=1; i < finances.length; i++) {
 var currentprof = finances[i][1];
 var previousprof = finances[i-1][1];
 difference = currentprof - previousprof;
 totaldif = totaldif + difference;
+
+diffArray = difference;
 }
 
 var average = (totaldif / (finances.length-1));
@@ -174,6 +177,8 @@ var average = (totaldif / (finances.length-1));
 console.log("Average Change: $" + average.toFixed(2));
 
 // greatest increase in profits/losses requires the month and value of increase
+
+console.log(diffArray);
 
 
 
