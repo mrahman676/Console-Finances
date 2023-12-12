@@ -156,7 +156,8 @@ var difference = 0;
 var totaldif = 0;
 
 
-for (i=1; i < finances.length; i++) {
+for (let i=1; i < finances.length; i++) {
   totalprof = totalprof + finances[i][1];
-console.log("Total: $" + totalprof);
 }
+
+console.log("Total: $" + totalprof);
