@@ -151,18 +151,27 @@ console.log("Total Months: " + finances.length);
 
 
 var totalprof = finances[0][1];
-var changes = 0;
-var totaldif = 0;
-
 
 for (let i=1; i < finances.length; i++) {
   totalprof = totalprof + finances[i][1];
-  changes = finances[i][1] - totalprof;
-  totaldif = totaldif + changes;
 }
 
 console.log("Total: $" + totalprof);
 
-averageChange = totaldif / (finances.length - 1);
 
-console.log ("Average Change: " + averageChange);
+var difference = 0;
+var totaldif = 0;
+
+for (let i=1; i < finances.length; i++) {
+var currentprof = finances[i][1];
+var previousprof = finances[i-1][1];
+difference = currentprof - previousprof;
+totaldif = totaldif + difference;
+}
+
+var average = (totaldif / (finances.length-1));
+
+console.log("Average Change: " + average);
+
+
+
