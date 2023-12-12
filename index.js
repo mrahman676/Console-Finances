@@ -137,26 +137,11 @@ console.log("Total Months: " + finances.length);
 
 // first profit + next profit and it loops, so we create a loop that gives us our addition, which can be looped
 
-var totalprof = finances[0][1];
-
-
-for (i=1; i<finances.length; i++) {
-  totalprof = totalprof + finances[i][1]
-}
-
-var changes = finances[0][1];
-
-for (i=0; i<finances.length; i++) {
-  changes = finances[i+1][1] - finances [i][0]
-}
-
-
-
 // total of changes can be, 
 
 // finances[1][1] - finances [0][1]
 // finances [2][1] - finances [1][1]
-console.log("Total: $" + totalprof);
+
 
 // Average changes in entire period is all differences / number of differences in a for loop
 
@@ -164,5 +149,14 @@ console.log("Total: $" + totalprof);
 // we need to create a variable for total differences
 // we need to create a loop to assess each change / total number of change
 
-var changes = 
 
+var totalprof = finances[0][1];
+var changes = 0;
+var difference = 0;
+var totaldif = 0;
+
+
+for (i=1; i < finances.length; i++) {
+  totalprof = totalprof + finances[i][1];
+console.log("Total: $" + totalprof);
+}
