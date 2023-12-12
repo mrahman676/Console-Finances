@@ -180,8 +180,7 @@ var average = (totaldif / (finances.length-1));
 
 console.log("Average Change: $" + average.toFixed(2));
 
-console.log("Greatest Increase in Profit/Losses: " + monthdate  +
-+ profitmonth);
+console.log(`Greatest Increase in Profit/Losses: ${monthdate} (£${profitmonth})`)
 
 
 
