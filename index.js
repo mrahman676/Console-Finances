@@ -162,16 +162,26 @@ console.log("Total: $" + totalprof);
 
 var difference = [];
 var totaldif = 0;
+var profitmonth = 0;
+var monthdate = "";
 
 
 for (j=1; j < finances.length; j++) {
 difference[j-1] = finances[j][1] - finances[j-1][1];
 totaldif = totaldif + difference[j-1];
+
+if (profitmonth < difference[j-1]) {
+  profitmonth = difference[j-1]
+  monthdate = finances[j][0]
+}
 }
 
 var average = (totaldif / (finances.length-1));
 
 console.log("Average Change: $" + average.toFixed(2));
+
+console.log("Greatest Increase in Profit/Losses: " + monthdate  +
++ profitmonth);
 
 
 
