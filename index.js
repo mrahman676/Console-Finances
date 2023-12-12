@@ -1,3 +1,5 @@
+// Variables 
+
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -96,6 +98,7 @@ var DecProfit = 0;
 var IncMonth = "";
 var DecMonth = "";
 
+// If Statement & For Loops
 
 for (i=1; i < finances.length; i++) {
   totalprof = totalprof + finances[i][1];
@@ -116,6 +119,8 @@ if (DecProfit > difference[j-1]) {
   DecMonth = finances[j][0]
 }
 }
+
+// Console Log
 
 console.log("Financial Analysis")
 console.log("----------------")
