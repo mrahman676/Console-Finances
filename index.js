@@ -87,90 +87,24 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-
-// You have been given a dataset composed of arrays with two fields, Date and Profit / Losses.
-
-// Your task is to write JavaScript code that analyzes the records to calculate each of the following:
-
-// The total number of months included in the dataset.
-  // finances.length
-
-// The net total amount of Profit / Losses over the entire period.
-
-  // Need a variable for Profits/Losses
-  // Need to be able to compare the data for the loop that we're on to the data from the previous loop
-    // Need variables for current & previous once we start the loop
-    // Need an if statement to make sure we're on at least month 2 (array index 1) before starting to figure profits & losses
-
-// The average of the changes in Profit / Losses over the entire period.
-  // Need a variable to track the average change
-  // That will make use of the current & previous variables we set up before
-// You will need to track what the total change in Profit / Losses are from month to month and then find the average.
-// (Total / (Number of months - 1))
-
-// The greatest increase in Profit / Losses(date and amount) over the entire period.
-  // Need a variable for the greatest increase
-  // On each iteration, compare the current change in profits/losses to what's currently stored
-  // If the change is more, replace what's currently stored in the variable
-
-// The greatest decrease in Profit / Losses(date and amount) over the entire period.
-  // Need a variable for the greatest decrease
-  // On each iteration, compare the current change in profits/losses to what's currently stored
-  // If the loss is greater, replace what's currently stored in the variable
-
-// variables:
-// total number of months
-// rolling total of profits
-// greatest increase (month & amt)
-// greatest loss (month & amt)
-// average of the changes
-
-// variables declared inside the loop:
-// current data point
-// previous data point
-
-console.log("Financial Analysis")
-
-console.log("----------------")
-
-console.log("Total Months: " + finances.length);
-
-// first profit + next profit and it loops, so we create a loop that gives us our addition, which can be looped
-
-// total of changes can be, 
-
-// finances[1][1] - finances [0][1]
-// finances [2][1] - finances [1][1]
-
-
-// Average changes in entire period is all differences / number of differences in a for loop
-
-// we need to create a variable for changes (differences)
-// we need to create a variable for total differences
-// we need to create a loop to assess each change / total number of change
-// greatest increase in profits/losses requires the month and value of increase
-
-
 var totalprof = finances[0][1];
-
-for (i=1; i < finances.length; i++) {
-  totalprof = totalprof + finances[i][1];
-}
-
-console.log("Total: $" + totalprof);
-
-
 var difference = [];
 var totaldif = 0;
+var average = (totaldif / (finances.length-1));
 var IncProfit = 0;
 var DecProfit = 0;
 var IncMonth = "";
 var DecMonth = "";
 
 
+for (i=1; i < finances.length; i++) {
+  totalprof = totalprof + finances[i][1];
+}
+
 for (j=1; j < finances.length; j++) {
 difference[j-1] = finances[j][1] - finances[j-1][1];
 totaldif = totaldif + difference[j-1];
+average = totaldif / (finances.length-1);
 
 if (IncProfit < difference[j-1]) {
   IncProfit = difference[j-1]
@@ -183,18 +117,10 @@ if (DecProfit > difference[j-1]) {
 }
 }
 
-var average = (totaldif / (finances.length-1));
-
+console.log("Financial Analysis")
+console.log("----------------")
+console.log("Total Months: " + finances.length);
+console.log("Total: $" + totalprof);
 console.log("Average Change: $" + average.toFixed(2));
-
 console.log(`Greatest Increase in Profit/Losses: ${IncMonth} (£${IncProfit})`)
-
 console.log(`Greatest Decrease in Profit/Losses: ${DecMonth} (£${DecProfit})`)
-
-
-
-
-
-
-
-
