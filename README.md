@@ -47,5 +47,6 @@ For more info please refer to: https://snyk.io/learn/what-is-mit-license/#what-i
 
 ## Badges
 
-![HTML](https://img.shields.io/badge/html-orange)
+![HTML](https://img.shields.io/badge/HTML-orange
+)
 ![JavaScript](https://img.shields.io/badge/JavaScript-gold)
