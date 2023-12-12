@@ -148,6 +148,7 @@ console.log("Total Months: " + finances.length);
 // we need to create a variable for changes (differences)
 // we need to create a variable for total differences
 // we need to create a loop to assess each change / total number of change
+// greatest increase in profits/losses requires the month and value of increase
 
 
 var totalprof = finances[0][1];
@@ -159,26 +160,21 @@ for (i=1; i < finances.length; i++) {
 console.log("Total: $" + totalprof);
 
 
-var difference = 0;
+var difference = [];
 var totaldif = 0;
-var diffArray = [];
 
-for (i=1; i < finances.length; i++) {
-var currentprof = finances[i][1];
-var previousprof = finances[i-1][1];
-difference = currentprof - previousprof;
-totaldif = totaldif + difference;
 
-diffArray = difference;
+for (j=1; j < finances.length; j++) {
+difference[j-1] = finances[j][1] - finances[j-1][1];
+totaldif = totaldif + difference[j-1];
 }
 
 var average = (totaldif / (finances.length-1));
 
 console.log("Average Change: $" + average.toFixed(2));
 
-// greatest increase in profits/losses requires the month and value of increase
 
-console.log(diffArray);
+
 
 
 
